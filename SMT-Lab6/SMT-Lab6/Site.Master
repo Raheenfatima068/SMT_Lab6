@@ -1,0 +1,95 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SMT_Lab6.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%: Page.Title %> - SMT Lab 6</title>
+
+    <link href="<%= ResolveUrl("~/Content/bootstrap.min.css") %>"
+          rel="stylesheet" />
+
+    <link href="<%= ResolveUrl("~/Content/Site.css") %>"
+          rel="stylesheet" />
+
+    <link href="<%= ResolveUrl("~/favicon.ico") %>"
+          rel="shortcut icon"
+          type="image/x-icon" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <!-- ScriptManager without problematic named script references -->
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" runat="server" href="~/">
+                    SMT Lab 6
+                </a>
+
+                <button type="button"
+                        class="navbar-toggler"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/About">
+                                About
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Contact">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container body-content">
+
+            <asp:ContentPlaceHolder
+                ID="MainContent"
+                runat="server" />
+
+            <hr />
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - SMT Lab 6</p>
+            </footer>
+
+        </main>
+
+    </form>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+
+</body>
+</html>
